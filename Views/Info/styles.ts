@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../values/colors';
+import Constants from 'expo-constants';
 
 export const styles = StyleSheet.create({
     container: {
@@ -7,18 +8,17 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.green,
     },
     scroll: {
-        flex: 1,
+        paddingVertical: Constants.statusBarHeight,
     },
     contentContainer: {
-        // flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'flex-start',
+        alignItems: 'stretch',
         paddingVertical: 20,
     },
     tableContainer: {
-        // flex: 1,
+        flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
         padding: 20,
     },
     text: {
@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     titleText: {
         fontSize: 22,
         fontWeight: 'bold',
+        textAlign: 'center',
     },
     buttonContainer: {
         justifyContent: 'center',

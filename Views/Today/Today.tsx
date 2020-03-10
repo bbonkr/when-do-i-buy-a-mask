@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, ScrollView, RefreshControl } from 'react-native';
+import {
+    View,
+    Text,
+    ScrollView,
+    RefreshControl,
+    StatusBar,
+} from 'react-native';
 import { styles } from './styles';
 import { DateUtility } from '../../lib/DateUtility';
+import { colors } from '../../values/colors';
 
 export const Today = () => {
     const dateUtility = new DateUtility();
@@ -28,6 +35,7 @@ export const Today = () => {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="light-content" />
             <ScrollView
                 style={styles.scroll}
                 contentContainerStyle={styles.contentContainer}
@@ -35,9 +43,12 @@ export const Today = () => {
                     <RefreshControl
                         refreshing={loading}
                         onRefresh={handleRefresh}
+                        title="새로고침"
+                        titleColor={colors.light}
+                        tintColor={colors.light}
                     />
                 }
-                bounces={false}
+                bounces={true}
             >
                 <View style={styles.contentContainer}>
                     <Text style={[styles.text, styles.dateText]}>
