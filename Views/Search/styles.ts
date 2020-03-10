@@ -26,6 +26,12 @@ export const useStyles = (safeArea: EdgeInsets) =>
             fontSize: 36,
             color: colors.dark,
             textAlign: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        selectTouchableWrapper: {
+            justifyContent: 'center',
+            alignItems: 'center',
         },
         dayNameContainer: {
             justifyContent: 'center',

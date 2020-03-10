@@ -78,12 +78,24 @@ export const Search = () => {
                                 label: '출생연도를 선택하세요',
                                 value: '',
                             }}
+                            pickerProps={{
+                                style: styles.selectText,
+                            }}
                             doneText="선택"
+                            style={{
+                                inputAndroid: styles.selectText,
+                            }}
                         />
 
-                        <View style={styles.dayNameContainer}>
-                            <Text style={styles.dayNameText}>{dayName}</Text>
-                        </View>
+                        {selectedYear ? (
+                            <View style={styles.dayNameContainer}>
+                                <Text style={styles.dayNameText}>
+                                    {dayName}
+                                </Text>
+                            </View>
+                        ) : (
+                            undefined
+                        )}
                     </View>
 
                     <View style={styles.helpContainer}>
