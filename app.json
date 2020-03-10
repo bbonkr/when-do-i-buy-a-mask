@@ -1,6 +1,6 @@
 {
     "expo": {
-        "name": "Blank Template (TypeScript)",
+        "name": "공적 마스크 안내",
         "slug": "when-do-i-buy-a-mask",
         "privacy": "public",
         "sdkVersion": "36.0.0",
@@ -10,8 +10,8 @@
         "icon": "./assets/icon.png",
         "splash": {
             "image": "./assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
+            "resizeMode": "cover",
+            "backgroundColor": "#006BE8"
         },
         "updates": {
             "fallbackToCacheTimeout": 0
@@ -19,6 +19,9 @@
         "assetBundlePatterns": ["**/*"],
         "ios": {
             "supportsTablet": true
+        },
+        "android": {
+            "package": "kr.bbon.whenDoIBuyAMask"
         }
     }
 }

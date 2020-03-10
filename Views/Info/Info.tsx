@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React from 'react';
 import {
     View,
     Text,
     ScrollView,
-    RefreshControl,
     TouchableOpacity,
     Linking,
+    StatusBar,
 } from 'react-native';
 import { styles } from './styles';
 import { DateUtility } from '../../lib/DateUtility';
@@ -20,6 +20,7 @@ export const Info = () => {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="light-content" />
             <ScrollView
                 style={styles.scroll}
                 contentContainerStyle={styles.contentContainer}
@@ -33,22 +34,23 @@ export const Info = () => {
                         <TableItem title="요일" description="출생연도 끝자리" />
                         {[1, 2, 3, 4, 5, 6, 0].map(item => (
                             <TableItem
+                                key={item}
                                 title={dateUtility.getDayName(item)}
                                 description={dateUtility.getTarget(item)}
                             />
                         ))}
                     </View>
+                </View>
 
-                    <View style={styles.buttonContainer}>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={handlePressGoToSite}
-                        >
-                            <Text style={styles.buttonText}>
-                                공적 마스크 구매절차 질문&답변
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={handlePressGoToSite}
+                    >
+                        <Text style={styles.buttonText}>
+                            공적 마스크 구매절차 질문&답변
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
