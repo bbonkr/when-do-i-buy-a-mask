@@ -71,4 +71,64 @@ describe('DateUtility 테스트', () => {
         expect(dateUtility.isWeekend(1)).toBe(false);
         expect(dateUtility.isWeekend(5)).toBe(false);
     });
+
+    test('출생연도로 요일 찾기 1', () => {
+        const year = '1971';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(1);
+    });
+
+    test('출생연도로 요일 찾기 2', () => {
+        const year = '1972';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(2);
+    });
+
+    test('출생연도로 요일 찾기 3', () => {
+        const year = '1973';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(3);
+    });
+
+    test('출생연도로 요일 찾기 4', () => {
+        const year = '1974';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(4);
+    });
+
+    test('출생연도로 요일 찾기 5', () => {
+        const year = '1975';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(5);
+    });
+
+    test('출생연도로 요일 찾기 6', () => {
+        const year = '1976';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(1);
+    });
+
+    test('출생연도로 요일 찾기 7', () => {
+        const year = '1977';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(2);
+    });
+
+    test('출생연도로 요일 찾기 8', () => {
+        const year = '1978';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(3);
+    });
+
+    test('출생연도로 요일 찾기 9', () => {
+        const year = '1979';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(4);
+    });
+
+    test('출생연도로 요일 찾기 0', () => {
+        const year = '1970';
+        const value = dateUtility.getDayByYear(year);
+        expect(value).toBe(5);
+    });
 });

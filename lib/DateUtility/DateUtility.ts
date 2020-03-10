@@ -48,6 +48,15 @@ export class DateUtility {
         }
     }
 
+    public getDayByYear(year: string): number {
+        const last = year.substr(3, 1);
+        const day = this.getTable().findIndex(
+            x => x.findIndex(y => y === last) >= 0,
+        );
+
+        return day;
+    }
+
     public getTable() {
         return [
             [], // 일
