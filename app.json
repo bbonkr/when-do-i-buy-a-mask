@@ -1,6 +1,8 @@
 {
     "expo": {
         "name": "공적 마스크 안내",
+        "description": "공적 마스크 구입 관련 정보를 제공합니다",
+        "githubUrl": "https://github.com/bbonkr/when-do-i-buy-a-mask",
         "slug": "when-do-i-buy-a-mask",
         "privacy": "public",
         "sdkVersion": "36.0.0",
@@ -18,10 +20,12 @@
         },
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "buildNumber": "1"
         },
         "android": {
-            "package": "kr.bbon.whenDoIBuyAMask"
+            "package": "kr.bbon.whendoibuyamask",
+            "versionCode": 1
         }
     }
 }
