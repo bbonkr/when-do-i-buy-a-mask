@@ -39,12 +39,27 @@ export class DateUtility {
     }
 
     public getTarget(day: number): string {
+        const targets = this.getTargets(day);
+
+        return targets.length > 0
+            ? targets.join(', ')
+            : this.getDescriptionWeekend();
+    }
+
+    /**
+     * 요일별 출생연도 끝자리를 가져옵니다.
+     *
+     * @param {number} day
+     * @returns {string[]}
+     * @memberof DateUtility
+     */
+    public getTargets(day: number): string[] {
         const table = this.getTable();
 
         if (day > 0 && day < 6) {
-            return table[day].join(', ');
+            return table[day];
         } else {
-            return '주중 구입하지 않은 모든 사람';
+            return [];
         }
     }
 
@@ -67,5 +82,25 @@ export class DateUtility {
             ['5', '0'], // 금
             [], // 토
         ];
+    }
+
+    /**
+     * 주중 구입하지 않은 모든 출생연도 끝자리 설명
+     *
+     * @returns {string}
+     * @memberof DateUtility
+     */
+    public getDescriptionWeekend(): string {
+        return '주중 구입하지 않은 모든 사람';
+    }
+
+    public getYears(): string[] {
+        const today = new Date();
+        const yearsValue: string[] = [];
+        for (let i = today.getFullYear(), min = 1900; i >= min; i--) {
+            yearsValue.push(i.toString());
+        }
+
+        return yearsValue;
     }
 }

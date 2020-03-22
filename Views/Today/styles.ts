@@ -40,4 +40,9 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         marginVertical: 12,
     },
+    daysContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginVertical: 12,
+    },
 });
