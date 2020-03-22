@@ -23,7 +23,7 @@ export const useStyles = (safeArea: EdgeInsets) =>
             marginBottom: 12,
         },
         selectText: {
-            fontSize: 36,
+            fontSize: 32,
             color: colors.dark,
             textAlign: 'center',
             justifyContent: 'center',

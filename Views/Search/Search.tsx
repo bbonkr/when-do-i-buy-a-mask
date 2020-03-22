@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ScrollView, AsyncStorage } from 'react-native';
-import Select, { Item } from 'react-native-picker-select';
+import { View, Text, ScrollView, AsyncStorage, StatusBar } from 'react-native';
+import Select from 'react-native-picker-select';
 import { useStyles } from './styles';
 import { useSafeArea } from 'react-native-safe-area-context';
 import { asyncStorageKeys } from '../../values/asyncStorageKeys';
@@ -9,22 +9,13 @@ import { DateUtility } from '../../lib/DateUtility';
 export const Search = () => {
     const safeArea = useSafeArea();
     const styles = useStyles(safeArea);
-    const today = new Date();
-    const dateUtility = new DateUtility();
-    const [records, setRecords] = useState<Item[]>(() => {
-        const yearsValue: string[] = [];
-        for (let i = today.getFullYear(), min = 1900; i >= min; i--) {
-            yearsValue.push(i.toString());
-        }
 
-        return [
-            ...yearsValue.map(year => ({
-                key: year,
-                label: year,
-                value: year,
-            })),
-        ];
-    });
+    const dateUtility = new DateUtility();
+
+    const [records, setRecords] = useState<string[]>(() =>
+        dateUtility.getYears(),
+    );
+
     const [selectedYear, setSelectedYear] = useState<string>('');
     const [dayName, setDayName] = useState<string>('');
 
@@ -51,10 +42,9 @@ export const Search = () => {
 
     const handleChangeSelect = (value: string) => {
         setSelectedYear(value);
-
         AsyncStorage.setItem(asyncStorageKeys.selectedYear, value)
             .then(() => {})
-            .catch(erorr => {
+            .catch(error => {
                 console.error(error);
             })
             .finally(() => {});
@@ -62,24 +52,29 @@ export const Search = () => {
 
     return (
         <View style={styles.container}>
-            <ScrollView contentContainerStyle={styles.scrollContent}>
+            <StatusBar barStyle="dark-content" />
+            <ScrollView
+                contentContainerStyle={styles.scrollContent}
+                bounces={false}
+            >
                 <View style={styles.container}>
                     <View style={styles.contentContainer}>
                         <Text style={styles.labelText}>출생연도</Text>
                         <Select
                             value={selectedYear}
                             onValueChange={handleChangeSelect}
-                            items={records}
+                            items={records.map(year => ({
+                                key: year,
+                                label: year,
+                                value: year,
+                            }))}
                             textInputProps={{
                                 style: styles.selectText,
                             }}
                             placeholder={{
-                                key: '0000',
+                                // key: '0000',
                                 label: '출생연도를 선택하세요',
                                 value: '',
-                            }}
-                            pickerProps={{
-                                style: styles.selectText,
                             }}
                             doneText="선택"
                             style={{

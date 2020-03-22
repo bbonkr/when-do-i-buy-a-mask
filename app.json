@@ -21,11 +21,11 @@
         "assetBundlePatterns": ["**/*"],
         "ios": {
             "supportsTablet": true,
-            "buildNumber": "1"
+            "buildNumber": "2"
         },
         "android": {
             "package": "kr.bbon.whendoibuyamask",
-            "versionCode": 1
+            "versionCode": 2
         }
     }
 }

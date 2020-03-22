@@ -9,6 +9,7 @@ import {
 import { styles } from './styles';
 import { DateUtility } from '../../lib/DateUtility';
 import { colors } from '../../values/colors';
+import { CardView } from '../../components/CardView/CardView';
 
 export const Today = () => {
     const dateUtility = new DateUtility();
@@ -32,6 +33,8 @@ export const Today = () => {
     const handleRefresh = () => {
         getToday();
     };
+
+    const targets = dateUtility.getTargets(day);
 
     return (
         <View style={styles.container}>
@@ -68,17 +71,28 @@ export const Today = () => {
                         </Text>
                     )}
 
-                    <Text
-                        style={[
-                            styles.text,
-                            styles.targetText,
-                            dateUtility.isWeekend(day)
-                                ? styles.weekendText
-                                : {},
-                        ]}
-                    >
-                        {dateUtility.getTarget(day)}
-                    </Text>
+                    <View style={styles.daysContainer}>
+                        {targets.length > 0 ? (
+                            targets.map(t => (
+                                <CardView
+                                    key={`day-${t}`}
+                                    backgroundColor={styles.text.color}
+                                    textColor={styles.container.backgroundColor}
+                                    text={t}
+                                />
+                            ))
+                        ) : (
+                            <Text
+                                style={[
+                                    styles.text,
+                                    styles.targetText,
+                                    styles.weekendText,
+                                ]}
+                            >
+                                {dateUtility.getDescriptionWeekend()}
+                            </Text>
+                        )}
+                    </View>
                 </View>
             </ScrollView>
         </View>
