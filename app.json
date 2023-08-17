@@ -1,31 +1,36 @@
 {
-    "expo": {
-        "name": "공적 마스크 안내",
-        "description": "공적 마스크 구입 관련 정보를 제공합니다",
-        "githubUrl": "https://github.com/bbonkr/when-do-i-buy-a-mask",
-        "slug": "when-do-i-buy-a-mask",
-        "privacy": "public",
-        "sdkVersion": "36.0.0",
-        "platforms": ["ios", "android", "web"],
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/icon.png",
-        "splash": {
-            "image": "./assets/splash.png",
-            "resizeMode": "cover",
-            "backgroundColor": "#006BE8"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": ["**/*"],
-        "ios": {
-            "supportsTablet": true,
-            "buildNumber": "2"
-        },
-        "android": {
-            "package": "kr.bbon.whendoibuyamask",
-            "versionCode": 2
-        }
+  "expo": {
+    "name": "공적 마스크 안내",
+    "description": "공적 마스크 구입 관련 정보를 제공합니다",
+    "githubUrl": "https://github.com/bbonkr/when-do-i-buy-a-mask",
+    "slug": "when-do-i-buy-a-mask",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#006BE8"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "2"
+    },
+    "android": {
+      "package": "kr.bbon.whendoibuyamask",
+      "versionCode": 2
     }
+  }
 }
