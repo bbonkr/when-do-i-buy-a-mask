@@ -1,1 +1,2 @@
-export { CardView } from './CardView';
+export * from './CardView';
+export * from './styles';

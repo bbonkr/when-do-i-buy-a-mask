@@ -15,7 +15,7 @@ export const BottomTabNavigation = () => {
                 name={screenNames.today}
                 component={Today}
                 options={{
-                    tabBarIcon: ({ focused, color, size }) => (
+                    tabBarIcon: ({ color, size }) => (
                         <Icon name="today" size={size} color={color} />
                     ),
                     title: '오늘',
@@ -25,7 +25,7 @@ export const BottomTabNavigation = () => {
                 name={screenNames.info}
                 component={Info}
                 options={{
-                    tabBarIcon: ({ focused, color, size }) => (
+                    tabBarIcon: ({ color, size }) => (
                         <Icon name="info" size={size} color={color} />
                     ),
                     title: '정보',
@@ -35,7 +35,7 @@ export const BottomTabNavigation = () => {
                 name={screenNames.search}
                 component={Search}
                 options={{
-                    tabBarIcon: ({ focused, color, size }) => (
+                    tabBarIcon: ({ color, size }) => (
                         <Icon name="search" size={size} color={color} />
                     ),
                     title: '찾기',

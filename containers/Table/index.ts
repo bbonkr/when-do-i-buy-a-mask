@@ -1,1 +1,2 @@
-export {} from './TableItem';
+export * from './TableItem';
+export * from './styles';
